@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://blackcatacademy.github.io/blackcat-cli-spec/schema/blackcat-cli.manifest.schema.json",
+  "$id": "https://blackcatdatabase.github.io/blackcat-cli-spec/schema/blackcat-cli.manifest.schema.json",
   "title": "BlackCat CLI Component Manifest",
   "type": "object",
   "additionalProperties": false,
@@ -149,4 +149,3 @@
     }
   }
 }
-

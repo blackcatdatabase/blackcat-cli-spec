@@ -1,5 +1,5 @@
 {
-  "name": "blackcatacademy/blackcat-cli-spec",
+  "name": "blackcatdatabase/blackcat-cli-spec",
   "description": "Schema + validator for BlackCat CLI component manifests (declarative CLI capability discovery).",
   "type": "library",
   "license": "proprietary",
@@ -36,4 +36,3 @@
   "minimum-stability": "stable",
   "prefer-stable": true
 }
-
