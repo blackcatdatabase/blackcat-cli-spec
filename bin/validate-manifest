@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use BlackCat\CliSpec\Manifest\ManifestValidator;
+
+$path = $argv[1] ?? null;
+if (!is_string($path) || $path === '') {
+    fwrite(STDERR, "Usage: validate-manifest <path-to-blackcat-cli.json>\n");
+    exit(2);
+}
+
+$result = ManifestValidator::validateFile($path);
+if ($result->isValid()) {
+    fwrite(STDOUT, "OK\n");
+    exit(0);
+}
+
+foreach ($result->errors() as $error) {
+    $where = $error->path() === '' ? '(root)' : $error->path();
+    fwrite(STDERR, $where . ': ' . $error->message() . "\n");
+}
+
+exit(1);
+

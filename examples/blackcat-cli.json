@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "component": {
+    "id": "blackcat-crypto",
+    "name": "BlackCat Crypto",
+    "description": "Centralized cryptography services for the BlackCat ecosystem.",
+    "homepage": "https://github.com/blackcatacademy/blackcat-crypto",
+    "composer_package": "blackcat/crypto"
+  },
+  "cli": {
+    "entrypoints": [
+      {
+        "id": "crypto",
+        "command": "crypto",
+        "summary": "Crypto operations (keys, rotations, vault diagnostics).",
+        "type": "proxy",
+        "proxy": {
+          "runner": "php",
+          "script": "bin/crypto",
+          "args": []
+        }
+      }
+    ]
+  }
+}
+

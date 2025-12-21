@@ -1,0 +1,39 @@
+{
+  "name": "blackcatacademy/blackcat-cli-spec",
+  "description": "Schema + validator for BlackCat CLI component manifests (declarative CLI capability discovery).",
+  "type": "library",
+  "license": "proprietary",
+  "require": {
+    "php": "^8.3",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "BlackCat\\CliSpec\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "BlackCat\\CliSpec\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^1.11",
+    "phpstan/phpstan-phpunit": "^1.4",
+    "phpunit/phpunit": "^11.0"
+  },
+  "bin": [
+    "bin/validate-manifest"
+  ],
+  "scripts": {
+    "test": "vendor/bin/phpunit --colors=always",
+    "stan": "vendor/bin/phpstan analyse --configuration=phpstan.neon"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
+
